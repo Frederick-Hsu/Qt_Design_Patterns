@@ -1,0 +1,5 @@
+# The following file types will be ignored from git tracking
+
+*.o
+*.exe
+*.out

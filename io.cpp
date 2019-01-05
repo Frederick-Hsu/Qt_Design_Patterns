@@ -18,7 +18,8 @@ int main(int argc, char *argv[])
     int birthYear;
     
     cout << "What is your name? " << flush;
-    cin >> yourName;
+    // cin >> yourName;
+    getline(cin, yourName);
     
     cout << "What year were you born? ";
     cin >> birthYear;

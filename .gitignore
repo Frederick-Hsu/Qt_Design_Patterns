@@ -8,3 +8,7 @@ src/
 *.stash
 *Makefile*
 *.pro
+
+
+string/string
+stream/stream

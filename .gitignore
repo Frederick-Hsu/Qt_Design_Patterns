@@ -5,3 +5,6 @@
 *.out
 src/
 *.pdf
+*.stash
+*Makefile*
+*.pro

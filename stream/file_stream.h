@@ -11,5 +11,6 @@
 #define FILE_STREAM_H
 
     void manipulate_std_file_stream(void);
+    void manipulate_qt_file_stream(void);
 
 #endif  /* FILE_STREAM_H */

@@ -18,6 +18,8 @@ int main(int argc, char* argv[])
 {
     manipulate_std_stream();
     manipulate_qt_stream();
+
     manipulate_std_file_stream();
+    manipulate_qt_file_stream();
     return 0;
 }

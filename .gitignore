@@ -6,7 +6,13 @@
 
 src/
 *.pdf
-
 *.stash
 *Makefile*
 *.app/
+*.pro
+
+
+string/string
+stream/stream
+stream/mydata
+size/size

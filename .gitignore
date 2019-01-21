@@ -12,3 +12,13 @@ src/
 *Makefile*
 *.app/
 build*/
+*.stash
+*Makefile*
+*.app/
+*.pro
+
+
+string/string
+stream/stream
+stream/mydata
+size/size

@@ -8,8 +8,12 @@
  **************************************************************************************************/
 
 #include "stream.h"
+#include "file_stream.h"
+
 #include <QTextStream>
 #include <QDebug>
+#include <QString>
+#include <QFile>
 
 QTextStream cin(stdin);
 QTextStream cout(stdout);
@@ -37,4 +41,73 @@ void manipulate_qt_stream(void)
 
     qDebug() << "Here is a debug message with " << dub << "in it.";
     qDebug("Here is one with the number %d in it.", num1);
+}
+
+void manipulate_qt_file_stream(void)
+{
+     QString str, newstr;
+     QTextStream strbuf(&str);
+
+     int lucky = 7;
+     float pi = 3.1415926;
+     double e = 2.71;
+
+     cout << "An in-memory stream" << endl;
+     strbuf << "lucky number : " << lucky << endl
+            << "pi : " << pi << endl
+            << "e : " << e << endl;
+     cout << str;
+
+     QFile data("mydata");
+     data.open(QIODevice::ReadOnly);
+     QTextStream out(&data);
+     out << str;
+     data.close(); 
+
+     cout << "Read data from the file - watch for errors." << endl;
+     if (data.open(QIODevice::ReadOnly))
+     {
+          QTextStream in(&data);
+          int lucky2;
+          in >> newstr >> lucky2;
+          if (lucky != lucky2)
+          {
+               cerr << "ERROR! wrong " << newstr << lucky2 << endl;
+          }
+          else
+          {
+               cout << newstr << " OK" << endl;
+          }
+
+          float pi2;
+          in >> newstr >> pi2;
+          if (pi2 != pi)
+               cerr << "ERROR! wrong " << newstr << pi2 << endl;
+          else
+               cout << newstr << " OK" << endl;
+          
+          double e2;
+          in >> newstr >> e2;
+          if (e2 != e)
+          {
+               cerr << "ERROR: wrong " << newstr << e2 << endl;
+          }
+          else
+          {
+               cout << newstr << " OK" << endl;
+          }
+          data.close();
+     }      
+
+     cout << "Read from file line-by-line" << endl;
+     if (data.open(QIODevice::ReadOnly))
+     {
+          QTextStream in(&data);
+          while (not in.atEnd())
+          {
+               newstr = in.readLine();
+               cout << newstr << endl;
+          }
+          data.close();
+     }     
 }

@@ -73,3 +73,10 @@ void testStaticObject(void)
     }
     Thing::showCount();
 }
+
+void executeTestCases(void)
+{
+    verifyHowCopyAssignContructorWork();
+    std::cout << "\n" << std::endl;
+    verifyHowConversionConstructorWorks();
+}

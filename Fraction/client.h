@@ -15,4 +15,6 @@
     void manipulateComplex(void);
     void testStaticObject(void);
 
+    void executeTestCases(void);
+
 #endif  /* CLIENT_H */

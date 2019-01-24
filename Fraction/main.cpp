@@ -17,10 +17,14 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
+    executeTestCases();
+    /*
     accessStruture();
     accessClassFraction();
     manipulateComplex();
     testStaticObject();
+     */
+
     // return a.exec();
     getchar();
     return 0;

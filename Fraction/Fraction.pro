@@ -22,7 +22,8 @@ SOURCES += \
     Complex.cpp \
     Thing.cpp \
     circular/Chicken.cpp \
-    circular/Egg.cpp
+    circular/Egg.cpp \
+    advanced/Point.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -37,4 +38,5 @@ HEADERS += \
     Complex.h \
     Thing.h \
     circular/Chicken.h \
-    circular/Egg.h
+    circular/Egg.h \
+    advanced/Point.h

@@ -12,5 +12,6 @@
 
     void accessStruture(void);
     void accessClassFraction(void);
+    void manipulateComplex(void);
 
 #endif  /* CLIENT_H */

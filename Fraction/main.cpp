@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 
     accessStruture();
     accessClassFraction();
+    manipulateComplex();
     // return a.exec();
     getchar();
     return 0;

@@ -11,6 +11,7 @@
 #include "structure.h"
 #include "fraction.h"
 #include "Complex.h"
+#include "Thing.h"
 
 #include <QTextStream>
 #include <iostream>
@@ -59,4 +60,16 @@ void manipulateComplex(void)
     Complex C2(3.14);
     Complex C3(6.24, 10.98);
     std::cout << C1.toString() << "\t" << C2.toString() << "\t" << C3.toString() << std::endl;
+}
+
+void testStaticObject(void)
+{
+    Thing::showCount();
+    Thing t1(3, 4), t2(5, 6);
+    t1.showCount();
+    {
+        Thing t3(7, 8), t4(9, 10);
+        Thing::showCount();
+    }
+    Thing::showCount();
 }

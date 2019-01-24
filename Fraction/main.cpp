@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
     accessStruture();
     accessClassFraction();
     manipulateComplex();
+    testStaticObject();
     // return a.exec();
     getchar();
     return 0;

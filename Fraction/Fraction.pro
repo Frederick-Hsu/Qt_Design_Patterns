@@ -20,7 +20,9 @@ SOURCES += \
     client.cpp \
     fraction.cpp \
     Complex.cpp \
-    Thing.cpp
+    Thing.cpp \
+    circular/Chicken.cpp \
+    circular/Egg.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -33,4 +35,6 @@ HEADERS += \
     fraction.h \
     timer.h \
     Complex.h \
-    Thing.h
+    Thing.h \
+    circular/Chicken.h \
+    circular/Egg.h

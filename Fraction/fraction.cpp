@@ -59,45 +59,87 @@ Fraction& Fraction::operator=(const Fraction &other)
     return *this;
 }
 
-Fraction Fraction::add(Fraction fract)
-{
-    int numerator, denominator;
-    numerator = m_Numerator * fract.m_Denominator + m_Denominator * fract.m_Numerator;
-    denominator = m_Denominator * fract.m_Denominator;
-    return Fraction(numerator, denominator);
-}
+#if defined (NON_CONST_ARGUMENT)
+    Fraction Fraction::add(Fraction fract)
+    {
+        int numerator, denominator;
+        numerator = m_Numerator * fract.m_Denominator + m_Denominator * fract.m_Numerator;
+        denominator = m_Denominator * fract.m_Denominator;
+        return Fraction(numerator, denominator);
+    }
 
-Fraction Fraction::subtract(Fraction fract)
-{
-    int numerator, denominator;
-    numerator = m_Numerator * fract.m_Denominator - m_Denominator * fract.m_Numerator;
-    denominator = m_Denominator * fract.m_Denominator;
-    return Fraction(numerator, denominator);
-}
+    Fraction Fraction::subtract(Fraction fract)
+    {
+        int numerator, denominator;
+        numerator = m_Numerator * fract.m_Denominator - m_Denominator * fract.m_Numerator;
+        denominator = m_Denominator * fract.m_Denominator;
+        return Fraction(numerator, denominator);
+    }
 
-Fraction Fraction::multiply(Fraction fract)
-{
-    int numerator, denominator;
-    numerator = m_Numerator * fract.m_Numerator;
-    denominator = m_Denominator * fract.m_Denominator;
-    return Fraction(numerator, denominator);
-}
+    Fraction Fraction::multiply(Fraction fract)
+    {
+        int numerator, denominator;
+        numerator = m_Numerator * fract.m_Numerator;
+        denominator = m_Denominator * fract.m_Denominator;
+        return Fraction(numerator, denominator);
+    }
 
-Fraction Fraction::times(const Fraction &fract)
-{
-    int numerator, denominator;
-    numerator = m_Numerator * fract.m_Numerator;
-    denominator = m_Denominator * m_Denominator;
-    return Fraction(numerator, denominator);
-}
+    Fraction Fraction::times(const Fraction &fract)
+    {
+        int numerator, denominator;
+        numerator = m_Numerator * fract.m_Numerator;
+        denominator = m_Denominator * m_Denominator;
+        return Fraction(numerator, denominator);
+    }
 
-Fraction Fraction::divide(Fraction fract)
-{
-    int numerator, denominator;
-    numerator = m_Numerator * fract.m_Denominator;
-    denominator = m_Denominator * fract.m_Numerator;
-    return Fraction(numerator, denominator);
-}
+    Fraction Fraction::divide(Fraction fract)
+    {
+        int numerator, denominator;
+        numerator = m_Numerator * fract.m_Denominator;
+        denominator = m_Denominator * fract.m_Numerator;
+        return Fraction(numerator, denominator);
+    }
+#else
+    Fraction Fraction::add(const Fraction& other)
+    {
+        int numerator, denominator;
+        numerator = m_Numerator * other.m_Denominator + m_Denominator * other.m_Numerator;
+        denominator = m_Denominator * other.m_Denominator;
+        return Fraction(numerator, denominator);
+    }
+
+    Fraction Fraction::subtract(const Fraction& other)
+    {
+        int numerator, denominator;
+        numerator = m_Numerator * other.m_Denominator - m_Denominator * other.m_Numerator;
+        denominator = m_Denominator * other.m_Denominator;
+        return Fraction(numerator, denominator);
+    }
+
+    Fraction Fraction::multiply(const Fraction& other)
+    {
+        int numerator, denominator;
+        numerator = m_Numerator * other.m_Numerator;
+        denominator = m_Denominator * other.m_Denominator;
+        return Fraction(numerator, denominator);
+    }
+
+    Fraction Fraction::divide(const Fraction& other)
+    {
+        int numerator, denominator;
+        numerator = m_Numerator * other.m_Denominator;
+        denominator = m_Denominator * other.m_Numerator;
+        return Fraction(numerator, denominator);
+    }
+
+    Fraction Fraction::times(const Fraction& other)
+    {
+        int numerator, denominator;
+        numerator = m_Numerator * other.m_Numerator;
+        denominator = m_Denominator * other.m_Denominator;
+        return Fraction(numerator, denominator);
+    }
+#endif
 
 void Fraction::set(int numerator, int denominator)
 {

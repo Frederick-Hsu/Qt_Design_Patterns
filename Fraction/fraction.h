@@ -10,6 +10,8 @@
 #ifndef FRACTION_H
 #define FRACTION_H
 
+    // #define NON_CONST_ARGUMENT
+
     class QString;
 
     class Fraction
@@ -22,11 +24,21 @@
         ~Fraction();        /* destructor */
         Fraction& operator=(const Fraction& other);     /* copy assignment constructor */
 
+    public:
+#if defined (NON_CONST_ARGUMENT)
         Fraction add(Fraction fract);
         Fraction subtract(Fraction fract);
         Fraction multiply(Fraction fract);
         Fraction times(const Fraction& fract);
         Fraction divide(Fraction fract);
+#else
+        Fraction add(const Fraction& other);
+        Fraction subtract(const Fraction& other);
+        Fraction multiply(const Fraction& other);
+        Fraction divide(const Fraction& other);
+        Fraction times(const Fraction& other);
+#endif
+
         static QString report();
     public:
         void set(int numerator, int denominator);

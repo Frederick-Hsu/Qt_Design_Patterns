@@ -12,6 +12,7 @@
 #include "fraction.h"
 #include "Complex.h"
 #include "Thing.h"
+#include "advanced/Square.h"
 
 #include <QTextStream>
 #include <iostream>
@@ -79,4 +80,7 @@ void executeTestCases(void)
     verifyHowCopyAssignContructorWork();
     std::cout << "\n" << std::endl;
     verifyHowConversionConstructorWorks();
+
+    std::cout << "\n" << std::endl;
+    manageSubObjects();
 }

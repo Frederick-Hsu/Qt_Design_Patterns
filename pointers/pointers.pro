@@ -16,18 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    structure.cpp \
-    client.cpp \
-    fraction.cpp \
-    Complex.cpp \
-    Thing.cpp \
-    circular/Chicken.cpp \
-    circular/Egg.cpp \
-    advanced/Point.cpp \
-    advanced/Square.cpp \
-    advanced/Employer.cpp \
-    advanced/Person.cpp \
-    advanced/Position.cpp
+    pointer_demo.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -35,16 +24,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    structure.h \
-    client.h \
-    fraction.h \
-    timer.h \
-    Complex.h \
-    Thing.h \
-    circular/Chicken.h \
-    circular/Egg.h \
-    advanced/Point.h \
-    advanced/Square.h \
-    advanced/Employer.h \
-    advanced/Person.h \
-    advanced/Position.h
+    pointers.h

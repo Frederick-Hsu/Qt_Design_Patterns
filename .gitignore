@@ -6,6 +6,12 @@
 
 src/
 *.pdf
+*.user
+
+*.stash
+*Makefile*
+*.app/
+build*/
 *.stash
 *Makefile*
 *.app/

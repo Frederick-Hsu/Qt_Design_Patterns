@@ -1,31 +1,25 @@
 /**************************************************************************************************
- * Project      : Fraction
- * Description  : Study the topics of class and object.
+ * Project      : pointers
+ * Description  : This project deserved to delve the pointer topic in Qt C++
  * ================================================================================================
  * File name    : main.cpp
  * Description  : This file implements the main() entry function for current project.
- * Creator      : Frederique Hsu
+ * Creator      : Frederick Hsu
  * Creation date: Mon.  21 Jan. 2019
  * Copyright(C) 2019    All rights reserved.
  *
  **************************************************************************************************/
 
 #include <QCoreApplication>
-#include "client.h"
+#include "pointers.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    executeTestCases();
-    /*
-    accessStruture();
-    accessClassFraction();
-    manipulateComplex();
-    testStaticObject();
-     */
+    pointTo();
 
-    // return a.exec();
     getchar();
+    // return a.exec();
     return 0;
 }

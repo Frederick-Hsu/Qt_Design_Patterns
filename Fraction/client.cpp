@@ -10,8 +10,12 @@
 #include "client.h"
 #include "structure.h"
 #include "fraction.h"
+#include "Complex.h"
+#include "Thing.h"
+#include "advanced/Square.h"
 
 #include <QTextStream>
+#include <iostream>
 
 void accessStruture(void)
 {
@@ -30,8 +34,8 @@ void accessStruture(void)
 
 void accessClassFraction(void)
 {
-    const int DASHES = 30;
     QTextStream cout(stdout);
+    const int DASHES = 30;
 
     {
         int i;
@@ -49,4 +53,34 @@ void accessClassFraction(void)
     // f2.m_Numerator = 12;
     cout << "The first fraction is : " << f1.toString() << endl;
     cout << "\nThe second fraction, expressed as double is : " << f2.toDouble() << endl;
+}
+
+void manipulateComplex(void)
+{
+    Complex C1;
+    Complex C2(3.14);
+    Complex C3(6.24, 10.98);
+    std::cout << C1.toString() << "\t" << C2.toString() << "\t" << C3.toString() << std::endl;
+}
+
+void testStaticObject(void)
+{
+    Thing::showCount();
+    Thing t1(3, 4), t2(5, 6);
+    t1.showCount();
+    {
+        Thing t3(7, 8), t4(9, 10);
+        Thing::showCount();
+    }
+    Thing::showCount();
+}
+
+void executeTestCases(void)
+{
+    verifyHowCopyAssignContructorWork();
+    std::cout << "\n" << std::endl;
+    verifyHowConversionConstructorWorks();
+
+    std::cout << "\n" << std::endl;
+    manageSubObjects();
 }

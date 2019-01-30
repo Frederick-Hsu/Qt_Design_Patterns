@@ -12,5 +12,9 @@
 
     void accessStruture(void);
     void accessClassFraction(void);
+    void manipulateComplex(void);
+    void testStaticObject(void);
+
+    void executeTestCases(void);
 
 #endif  /* CLIENT_H */

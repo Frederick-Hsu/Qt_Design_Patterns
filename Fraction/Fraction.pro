@@ -27,7 +27,8 @@ SOURCES += \
     advanced/Square.cpp \
     advanced/Employer.cpp \
     advanced/Person.cpp \
-    advanced/Position.cpp
+    advanced/Position.cpp \
+    advanced/Date.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -47,4 +48,6 @@ HEADERS += \
     advanced/Square.h \
     advanced/Employer.h \
     advanced/Person.h \
-    advanced/Position.h
+    advanced/Position.h \
+    advanced/Hondurota.h \
+    advanced/Date.h

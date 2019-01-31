@@ -12,7 +12,7 @@
         Employer(std::string name, std::string market);
         Employer(const Employer& other);
         Employer& operator=(const Employer& other);
-        bool hire(Person& newHire, Position pos);
+        bool hire(Person& newHire, Position& pos);
         std::string toString();
     private:
         std::string m_Name;

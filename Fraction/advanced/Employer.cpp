@@ -30,7 +30,7 @@ Employer& Employer::operator=(const Employer &other)
     return *this;
 }
 
-bool Employer::hire(Person &newHire, Position pos)
+bool Employer::hire(Person &newHire, Position& pos)
 {
     return true;
 }

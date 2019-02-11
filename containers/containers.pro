@@ -17,7 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     list/string_list.cpp \
-    test.cpp
+    test.cpp \
+    iteration/dir_file.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -26,4 +27,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     list/string_list.h \
-    test.h
+    test.h \
+    iteration/dir_file.h

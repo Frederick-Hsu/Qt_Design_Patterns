@@ -6,13 +6,22 @@
 
 src/
 *.pdf
+*.user
+
+*.stash
+*Makefile*
+*.app/
+build*/
 *.stash
 *Makefile*
 *.app/
 *.pro
+*.user
+*build*/
 
 
 string/string
 stream/stream
 stream/mydata
 size/size
+qstd/qstd

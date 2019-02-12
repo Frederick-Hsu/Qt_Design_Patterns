@@ -1,0 +1,26 @@
+/**************************************************************************************************
+ * Project      : Functions
+ * Description  : Study the topic of Function in Qt C++ programming.
+ * ================================================================================================
+ * File name    : main.cpp
+ * Description  : This file implements the main() function for current project.
+ * Creator      : Frederick Hsu
+ * Creation date: Mon.  11 Feb. 2019
+ * Copyright(C) 2019    All rights reserved.
+ *
+ **************************************************************************************************/
+
+#include <QCoreApplication>
+#include "test.h"
+
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    executeTestCases();
+
+    // return a.exec();
+    getchar();
+    return 0;
+}

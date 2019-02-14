@@ -139,6 +139,80 @@ Fraction& Fraction::operator=(const Fraction &other)
         denominator = m_Denominator * other.m_Denominator;
         return Fraction(numerator, denominator);
     }
+
+    Fraction& Fraction::operator+(const Fraction& frac)
+    {
+        m_Numerator = m_Numerator * frac.m_Denominator + m_Denominator * frac.m_Denominator;
+        m_Denominator = m_Denominator * frac.m_Denominator;
+        return *this;
+    }
+
+    Fraction& Fraction::operator+(int num)
+    {
+        m_Numerator = m_Numerator + num * m_Denominator;
+        return *this;
+    }
+
+    Fraction& Fraction::operator-(const Fraction& frac)
+    {
+        m_Numerator = m_Numerator * frac.m_Denominator - m_Denominator * frac.m_Numerator;
+        m_Denominator = m_Denominator * frac.m_Denominator;
+        return *this;
+    }
+
+    Fraction& Fraction::operator-(int num)
+    {
+        m_Numerator = m_Numerator - m_Denominator * num;
+        return *this;
+    }
+
+    Fraction& Fraction::operator*(const Fraction& frac)
+    {
+        m_Numerator = m_Numerator * frac.m_Numerator;
+        m_Denominator = m_Denominator * frac.m_Denominator;
+        return *this;
+    }
+
+    Fraction& Fraction::operator*(int num)
+    {
+        m_Numerator *= num;
+        return *this;
+    }
+
+    Fraction& Fraction::operator/(const Fraction& frac)
+    {
+        m_Numerator = m_Numerator * frac.m_Denominator;
+        m_Denominator = m_Denominator * frac.m_Numerator;
+        return *this;
+    }
+
+    Fraction& Fraction::operator/(int num)
+    {
+        m_Denominator = m_Denominator * num;
+        return *this;
+    }
+
+    bool Fraction::operator>=(const Fraction& frac)
+    {
+        int numerator = m_Numerator * frac.m_Denominator - m_Denominator * frac.m_Numerator;
+        int denominator = m_Denominator * frac.m_Denominator;
+        double value = (numerator * 1.00) / (denominator * 1.00);
+        if (value >= 0.00)
+            return true;
+        else
+            return false;
+    }
+
+    bool Fraction::operator<(const Fraction& frac)
+    {
+        int numerator = m_Numerator * frac.m_Denominator - m_Denominator * frac.m_Numerator;
+        int denominator = m_Denominator * frac.m_Denominator;
+        double value = (numerator * 1.00) / (denominator * 1.00);
+        if (value < 0.00)
+            return true;
+        else
+            return false;
+    }
 #endif
 
 void Fraction::set(int numerator, int denominator)
@@ -170,6 +244,103 @@ QString Fraction::report()
                                                                                              .arg(s_copies)
                                                                                              .arg(s_constructors)
                                                                                              .arg(s_destructors);
+}
+
+Fraction operator+(const Fraction& frac1, const Fraction& frac2)
+{
+    int numerator = frac1.m_Numerator * frac2.m_Denominator + frac1.m_Denominator * frac2.m_Numerator;
+    int denominator = frac1.m_Denominator * frac2.m_Denominator;
+    return Fraction(numerator, denominator);
+}
+
+Fraction operator-(const Fraction& frac1, const Fraction& frac2)
+{
+    int numerator = frac1.m_Numerator * frac2.m_Denominator - frac1.m_Denominator * frac2.m_Numerator;
+    int denominator = frac1.m_Denominator * frac2.m_Denominator;
+    return Fraction(numerator, denominator);
+}
+
+Fraction operator*(const Fraction& frac1, const Fraction& frac2)
+{
+    int numerator = frac1.m_Numerator * frac2.m_Numerator;
+    int denominator = frac1.m_Denominator * frac2.m_Denominator;
+    return Fraction(numerator, denominator);
+}
+
+Fraction operator/(const Fraction& frac1, const Fraction& frac2)
+{
+    int numerator = frac1.m_Numerator * frac2.m_Denominator;
+    int denominator = frac1.m_Denominator * frac2.m_Numerator;
+    return Fraction(numerator, denominator);
+}
+
+Fraction operator+(const Fraction& frac, int num)
+{
+    int numerator = frac.m_Numerator + num * frac.m_Denominator;
+    int denominator = frac.m_Denominator;
+    return Fraction(numerator, denominator);
+}
+
+Fraction operator+(int num, const Fraction& frac)
+{
+    return (frac + num);
+}
+
+Fraction operator-(const Fraction& frac, int num)
+{
+    int numerator = frac.m_Numerator - num * frac.m_Denominator;
+    int denominator = frac.m_Denominator;
+    return Fraction(numerator, denominator);
+}
+
+Fraction operator-(int num, const Fraction& frac)
+{
+    int numerator = num * frac.m_Denominator - frac.m_Numerator;
+    int denominator = frac.m_Denominator;
+    return Fraction(numerator, denominator);
+}
+
+Fraction operator*(const Fraction& frac, int num)
+{
+    int numerator = frac.m_Numerator * num;
+    int denominator = frac.m_Denominator;
+    return Fraction(numerator, denominator);
+}
+
+Fraction operator*(int num, const Fraction& frac)
+{
+    return (frac * num);
+}
+
+Fraction operator/(const Fraction& frac, int num)
+{
+    int numerator = frac.m_Numerator;
+    int denominator = frac.m_Denominator * num;
+    return Fraction(numerator, denominator);
+}
+
+Fraction operator/(int num, const Fraction& frac)
+{
+    int numerator = num * frac.m_Denominator;
+    int denominator = frac.m_Numerator;
+    return Fraction(numerator, denominator);
+}
+
+bool operator>=(const Fraction& frac1, const Fraction& frac2)
+{
+    int numerator = frac1.m_Numerator * frac2.m_Denominator - frac1.m_Denominator * frac2.m_Numerator;
+    int denominator = frac1.m_Denominator * frac2.m_Denominator;
+
+    double value = (numerator * 1.00) / (denominator * 1.00);
+    if  (value >= 0.00)
+        return true;
+    else
+        return false;
+}
+
+bool operator<(const Fraction& frac1, const Fraction& frac2)
+{
+    return (!(frac1 >= frac2));
 }
 
 void verifyHowCopyAssignContructorWork(void)

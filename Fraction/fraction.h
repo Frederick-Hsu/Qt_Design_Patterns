@@ -16,6 +16,24 @@
 
     class Fraction
     {
+        friend Fraction operator+(const Fraction& frac1, const Fraction& frac2);
+        friend Fraction operator+(const Fraction& frac, int num);
+        friend Fraction operator+(int num, const Fraction& frac);
+
+        friend Fraction operator-(const Fraction& frac1, const Fraction& frac2);
+        friend Fraction operator-(const Fraction& frac, int num);
+        friend Fraction operator-(int num, const Fraction& frac);
+
+        friend Fraction operator*(const Fraction& frac1, const Fraction& frac2);
+        friend Fraction operator*(const Fraction& frac, int num);
+        friend Fraction operator*(int num, const Fraction& frac);
+
+        friend Fraction operator/(const Fraction& frac1, const Fraction& frac2);
+        friend Fraction operator/(const Fraction& frac, int num);
+        friend Fraction operator/(int num, const Fraction& frac);
+
+        friend bool operator>=(const Fraction& frac1, const Fraction& frac2);
+        friend bool operator< (const Fraction& frac1, const Fraction& frac2);
     public:
         Fraction();     /* no argument constructor */
         /* explicit */ Fraction(int numerator);        /* conversion constructor */
@@ -37,6 +55,18 @@
         Fraction multiply(const Fraction& other);
         Fraction divide(const Fraction& other);
         Fraction times(const Fraction& other);
+
+        Fraction& operator+(const Fraction& frac);
+        Fraction& operator+(int num);
+        Fraction& operator-(const Fraction& frac);
+        Fraction& operator-(int num);
+        Fraction& operator*(const Fraction& frac);
+        Fraction& operator*(int num);
+        Fraction& operator/(const Fraction& frac);
+        Fraction& operator/(int num);
+
+        bool operator>=(const Fraction& frac);
+        bool operator< (const Fraction& frac);
 #endif
 
         static QString report();

@@ -3,6 +3,8 @@
 
     #include <iostream>
 
+    // #define FRIEND_OPERATOR_OVERLOAD    1
+
     class Complex
     {
         /* binary non-member friend function declaration */
@@ -14,6 +16,9 @@
 
     public:
         Complex(double real = 0.0, double imag = 0.0);
+        Complex(const Complex& other);
+        Complex& operator=(const Complex& other);
+
         /* binary member function operators */
         Complex& operator+=(const Complex& cmp);
         Complex& operator-=(const Complex& cmp);
@@ -23,5 +28,7 @@
         double m_Real;
         double m_Imag;
     };
+
+    void testOperatorOverload(void);
 
 #endif  /* COMPLEX_H */

@@ -20,7 +20,8 @@ SOURCES += \
     ../qstd/qstd.cpp \
     test.cpp \
     Date.cpp \
-    Complex.cpp
+    Complex.cpp \
+    function_arguments.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -32,4 +33,5 @@ HEADERS += \
     ../qstd/qstd.h \
     test.h \
     Date.h \
-    Complex.h
+    Complex.h \
+    function_arguments.h

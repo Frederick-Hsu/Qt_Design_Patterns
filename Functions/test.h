@@ -3,4 +3,6 @@
 
     void executeTestCases(void);
 
+    void verifyFunctionArgumentsModule(void);
+
 #endif  /* TEST_H */

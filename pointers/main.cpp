@@ -12,12 +12,16 @@
 
 #include <QCoreApplication>
 #include "pointers.h"
+#include "pointer_accessing_memory.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
     pointTo();
+    newDeletePointers();
+    referenceVariable();
+    constantPointerAndReference();
 
     getchar();
     // return a.exec();

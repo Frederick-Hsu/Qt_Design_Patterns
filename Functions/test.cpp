@@ -3,6 +3,8 @@
 #include "Date.h"
 #include "Complex.h"
 #include "function_arguments.h"
+#include "inline_test.h"
+#include "ellipsis.h"
 
 #include <iostream>
 
@@ -30,4 +32,8 @@ void verifyFunctionArgumentsModule(void)
     testMaxi();
     std::cout << "\n" << std::endl;
     testConstOverload();
+    std::cout << "\n" << std::endl;
+    inlineTest();
+    std::cout << "\n" << std::endl;
+    testSum();
 }

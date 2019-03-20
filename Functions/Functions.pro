@@ -21,7 +21,9 @@ SOURCES += \
     test.cpp \
     Date.cpp \
     Complex.cpp \
-    function_arguments.cpp
+    function_arguments.cpp \
+    inline_test.cpp \
+    ellipsis.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -34,4 +36,6 @@ HEADERS += \
     test.h \
     Date.h \
     Complex.h \
-    function_arguments.h
+    function_arguments.h \
+    inline_test.h \
+    ellipsis.h

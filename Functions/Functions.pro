@@ -23,7 +23,8 @@ SOURCES += \
     Complex.cpp \
     function_arguments.cpp \
     inline_test.cpp \
-    ellipsis.cpp
+    ellipsis.cpp \
+    Crypto.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -38,4 +39,5 @@ HEADERS += \
     Complex.h \
     function_arguments.h \
     inline_test.h \
-    ellipsis.h
+    ellipsis.h \
+    Crypto.h

@@ -12,10 +12,15 @@
 
 
 #include <QCoreApplication>
+#include "student_test.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    return a.exec();
+    testCase_Execute();
+
+    std::getchar();
+    // return a.exec();
+    return EXIT_SUCCESS;
 }

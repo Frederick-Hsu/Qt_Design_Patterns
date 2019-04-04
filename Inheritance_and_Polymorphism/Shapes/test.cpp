@@ -4,6 +4,9 @@
 #include "Rectangle.h"
 #include "Square.h"
 #include "Circle.h"
+#include "Bank.h"
+
+static QTextStream cout(stdout);
 
 void showNameAndArea(Shape* pshp)
 {
@@ -15,6 +18,13 @@ void showNameAndArea(Shape* pshp)
 
 void executeTestCases(void)
 {
+    testCase_verifyPolymorphism();
+    cout << "\n" << endl;
+    testCase_verifyCopyAssignConstructor();
+}
+
+void testCase_verifyPolymorphism(void)
+{
     // Shape shp;
     Rectangle rectangle(4.0, 5.5);
     Square square(8.0);
@@ -24,4 +34,9 @@ void executeTestCases(void)
     showNameAndArea(&rectangle);
     showNameAndArea(&square);
     showNameAndArea(&circle);
+}
+
+void testCase_verifyCopyAssignConstructor()
+{
+    testBank();
 }

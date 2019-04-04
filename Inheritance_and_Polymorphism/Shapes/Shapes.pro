@@ -22,7 +22,8 @@ SOURCES += \
     Shape.cpp \
     test.cpp \
     account.cpp \
-    account_client.cpp
+    account_client.cpp \
+    Bank.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -35,4 +36,5 @@ HEADERS += \
     Rectangle.h \
     Square.h \
     test.h \
-    account.h
+    account.h \
+    Bank.h

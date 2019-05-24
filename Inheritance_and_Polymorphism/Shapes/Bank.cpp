@@ -12,6 +12,7 @@ Bank::~Bank()
 {
     qDeleteAll(m_Accounts);
     m_Accounts.clear();
+    qDebug() << "Destroy the objects of class Bank." << endl;
 }
 
 QString Bank::getAcctListing() const

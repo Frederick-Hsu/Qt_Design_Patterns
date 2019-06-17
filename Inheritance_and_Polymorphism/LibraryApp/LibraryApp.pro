@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         Book.cpp \
         Library.cpp \
+        LibraryClient.cpp \
         RefItem.cpp \
         ReferenceBook.cpp \
         main.cpp
@@ -29,5 +30,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     Book.h \
     Library.h \
+    LibraryClient.h \
     RefItem.h \
     ReferenceBook.h

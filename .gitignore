@@ -7,6 +7,7 @@
 src/
 *.pdf
 *.user
+*.user.*
 
 *.stash
 *Makefile*
@@ -25,3 +26,4 @@ stream/stream
 stream/mydata
 size/size
 qstd/qstd
+Dialog/

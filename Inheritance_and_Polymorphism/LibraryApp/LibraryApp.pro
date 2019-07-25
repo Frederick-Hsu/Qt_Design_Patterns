@@ -16,11 +16,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         Book.cpp \
+        Educational.cpp \
+        Entertainment.cpp \
+        Film.cpp \
+        FilmList.cpp \
         Library.cpp \
         LibraryClient.cpp \
+        LibraryUI.cpp \
         RefItem.cpp \
         ReferenceBook.cpp \
-        main.cpp
+        main.cpp \
+        qstd.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -29,7 +35,13 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Book.h \
+    Educational.h \
+    Entertainment.h \
+    Film.h \
+    FilmList.h \
     Library.h \
     LibraryClient.h \
+    LibraryUI.h \
     RefItem.h \
-    ReferenceBook.h
+    ReferenceBook.h \
+    qstd.h

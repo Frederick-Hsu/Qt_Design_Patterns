@@ -1,12 +1,9 @@
 #ifndef LIBRARY_CLIENT_H
 #define LIBRARY_CLIENT_H
 
-    #include <QTextStream>
+    #include <QStringList>
 
-    class Library;
-
-    QTextStream cout(stdout);
-    QTextStream cin(stdin);
+    #include "Library.h"
 
     enum Choices
     {
@@ -38,7 +35,16 @@
                                << "DATADVD");
 
     void save(Library& lib);
+    void find(Library& lib);
+    void remove(Library& lib);
+    void list(Library& lib);
+    void prepareToQuit(Library& lib);
     Choices nextTask();
     void add(Library& lib, QStringList objdata);
+    void read(Library& lib);
+    QStringList promptRefItem();
+    QStringList promptBook();
+    QStringList promptReferenceBook();
+    void enterData(Library& lib);
 
 #endif  /* LIBRARY_CLIENT_H */

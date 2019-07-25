@@ -12,10 +12,44 @@
 
 
 #include <QCoreApplication>
+#include "Library.h"
+#include "LibraryClient.h"
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
-
-    return a.exec();
+    Library lib;
+    bool saved;
+    while (1)
+    {
+        switch (nextTask())
+        {
+        case READ:
+            read(lib);
+            saved = false;
+            break;
+        case ADD:
+            enterData(lib);
+            saved = false;
+            break;
+        case FIND:
+            find(lib);
+            break;
+        case REMOVE:
+            remove(lib);
+            saved = false;
+            break;
+        case SAVE:
+            save(lib);
+            saved = true;
+            break;
+        case LIST:
+            list(lib);
+            break;
+        case QUIT:
+            prepareToQuit(lib);
+            break;
+        default:
+            break;
+        }
+    }
 }

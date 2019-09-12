@@ -18,6 +18,7 @@ build*/
 *.app/
 *.pro
 *.user
+*.png
 *build*/
 
 

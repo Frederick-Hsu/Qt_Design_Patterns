@@ -16,7 +16,7 @@ build*/
 *.stash
 *Makefile*
 *.app/
-*.pro
+# *.pro
 *.user
 *.png
 *build*/
@@ -29,3 +29,4 @@ size/size
 qstd/qstd
 Dialog/
 libs/
+temp/

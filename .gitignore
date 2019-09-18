@@ -16,7 +16,7 @@ build*/
 *.stash
 *Makefile*
 *.app/
-*.pro
+# *.pro
 *.user
 *.png
 *build*/

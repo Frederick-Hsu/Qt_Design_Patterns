@@ -3,6 +3,17 @@
 *.o
 *.exe
 *.out
+*.tlog
+*.log
+*.obj
+*.idb
+*.pdb
+*.ipch
+*.db
+*.ilk
+*.filters
+*.suo
+
 
 src/
 *.pdf

@@ -3,6 +3,7 @@
 #include "Simple_Factory/CarBase.h"
 #include "Simple_Factory/CarFactory.h"
 #include "Abstract_Template_Factory/template_factory.h"
+#include "Factory_Method/AssemblingCarFactory.h"
 
 #include <iostream>
 #include <memory>
@@ -17,6 +18,9 @@ void execute_test_items(void)
     cout << "\n" << endl;
 
     STCarBaseFactoryTest();
+    cout << "\n" << endl;
+
+    AssemblingCarFactoryTest();
     cout << "\n" << endl;
 }
 

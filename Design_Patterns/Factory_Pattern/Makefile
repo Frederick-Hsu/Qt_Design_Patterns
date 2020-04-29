@@ -9,7 +9,7 @@ OPTIONS = -Wall -g -p
 FLAGS = -std=c++17
 
 OBJs = main.o test.o Simple_Factory/Car.o Simple_Factory/CarBase.o Simple_Factory/CarFactory.o \
-Factory_Method/CarFactories.o
+Factory_Method/CarFactories.o Abstract_Template_Factory/template_factory.o
 
 Factory_Pattern : $(OBJs)
 	g++ $(OPTIONS) $(FLAGS) $(OBJs) -o Factory_Pattern
@@ -31,6 +31,9 @@ CarFactory.o : CarFactory.cpp CarFactory.h Car.h CarBase.h
 
 CarFactories.o : CarFactories.cpp CarFactories.h CarBase.h Car.h IFactory.h
 	g++ $(OPTIONS) $(FLAGS) -c CarFactories.cpp
+
+template_factory.o : template_factory.cpp template_factory.h CarBase.h
+	g++ $(OPTIONS) $(FLAGS) -c template_factory.cpp
 
 .PHONY : clean
 clean :

@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        Abstract_Template_Factory/template_factory.cpp \
         Factory_Method/CarFactories.cpp \
         Simple_Factory/Car.cpp \
         Simple_Factory/CarBase.cpp \
@@ -12,6 +13,7 @@ SOURCES += \
         test.cpp
 
 HEADERS += \
+    Abstract_Template_Factory/template_factory.h \
     Factory_Method/CarFactories.h \
     Factory_Method/IFactory.h \
     Simple_Factory/Car.h \

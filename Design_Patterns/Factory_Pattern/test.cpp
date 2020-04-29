@@ -2,6 +2,7 @@
 
 #include "Simple_Factory/CarBase.h"
 #include "Simple_Factory/CarFactory.h"
+#include "Abstract_Template_Factory/template_factory.h"
 
 #include <iostream>
 #include <memory>
@@ -10,7 +11,13 @@ using namespace std;
 void execute_test_items(void)
 {
     SimpleFactoryTest();
+    cout << "\n" << endl;
 
+    STCarFactoryTest();
+    cout << "\n" << endl;
+
+    STCarBaseFactoryTest();
+    cout << "\n" << endl;
 }
 
 void SimpleFactoryTest(void)

@@ -1,6 +1,6 @@
 #include "singleton_thread_unsafe.h"
 #include "CSingleton.h"
-#include "Meyers_Singleton._Pattern.h"
+#include "Meyers_Singleton_Pattern.h"
 
 #include <iostream>
 #include <thread>
@@ -11,7 +11,7 @@ using namespace std;
 #define MEYERS_SINGLETON        2
 #define SINGLETON_KIND          MEYERS_SINGLETON
 
-unsigned int __stdcall Singleton_Thread(void)
+unsigned int Singleton_Thread(void)
 {
     cout << "Current thread-ID = " << this_thread::get_id() << endl;
 #if (SINGLETON_KIND == ORDINARY_SINGLETON)

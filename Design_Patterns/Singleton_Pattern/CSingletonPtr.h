@@ -22,7 +22,7 @@
     {
     private:
         static std::shared_ptr<T> m_singletonPtr;
-    public:
+    protected:
         CSingletonPtr();
         virtual ~CSingletonPtr();
     private:
@@ -30,6 +30,13 @@
         CSingletonPtr(const CSingletonPtr& other);
     public:
         static shared_ptr<T> GetInstance();
+        static T& GetElementInstance();
+    private:
+        class Deleter
+        {
+        public:
+            void operator()(T* p);
+        };
     };
 
 
@@ -56,11 +63,25 @@
 
     template<class T> shared_ptr<T> CSingletonPtr<T>::GetInstance()
     {
-        static mutex m_mutex;
-        static lock_guard<mutex> lockGuard(m_mutex);
-        shared_ptr<T> tmp(new T());
+        mutex m_mutex;
+        lock_guard<mutex> lockGuard(m_mutex);
+        shared_ptr<T> tmp(new T(), T::Deleter());
         m_singletonPtr = tmp;
         return m_singletonPtr;
+    }
+
+    template<class T> T& CSingletonPtr<T>::GetElementInstance()
+    {
+        mutex mtx;
+        lock_guard<mutex> lockGuard(mtx);
+        shared_ptr<T> tmp(new T(), T::Deleter());
+        m_singletonPtr = tmp;
+        return m_singletonPtr.get();
+    }
+
+    template<class T> void CSingletonPtr<T>::Deleter::operator()(T* p)
+    {
+        delete p;
     }
 
 #endif  /* CSINGLETONPTR_H */

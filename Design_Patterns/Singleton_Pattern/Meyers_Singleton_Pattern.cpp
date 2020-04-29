@@ -1,4 +1,4 @@
-#include "Meyers_Singleton._Pattern.h"
+#include "Meyers_Singleton_Pattern.h"
 
 #include <iostream>
 #include <thread>

@@ -1,10 +1,10 @@
 #include "Manager.h"
 
-Manager::Manager()
+Manager::Manager() : CSingletonPtr<Manager>()
 {
 #if defined (DEBUG_PURPOSE)
     cout << "Manager begins constructing..." << endl;
-    this_thread::sleep_for(chrono::milliseconds(1000));
+    this_thread::sleep_for(chrono::milliseconds(5000));
 #endif
     m_count = 0;
 #if defined (DEBUG_PURPOSE)

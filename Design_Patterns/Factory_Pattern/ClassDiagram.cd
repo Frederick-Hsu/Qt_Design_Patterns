@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="GMFactory">
+    <Position X="8.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory_Method\CarFactories.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FordFactory">
+    <Position X="10.75" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory_Method\CarFactories.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyotaFactory">
+    <Position X="13" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory_Method\CarFactories.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IFactory">
+    <Position X="10.75" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory_Method\IFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GMCar">
+    <Position X="2.75" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Simple_Factory\Car.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FordCar">
+    <Position X="5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Simple_Factory\Car.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyotaCar">
+    <Position X="0.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Simple_Factory\Car.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CarBase">
+    <Position X="2.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAIAAAQAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Simple_Factory\CarBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CarFactory">
+    <Position X="2.75" Y="6.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Simple_Factory\CarFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -13,6 +13,9 @@
 *.ilk
 *.filters
 *.suo
+*.txt
+*.opendb
+*.db*
 
 
 src/

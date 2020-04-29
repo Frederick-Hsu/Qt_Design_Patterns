@@ -10,11 +10,13 @@
  */
 
 #include <iostream>
-
+#include "test.h"
 using namespace std;
 
 int main()
 {
     cout << "C++ standard no.: " << __cplusplus << endl;
+
+    execute_test_items();
     return 0;
 }

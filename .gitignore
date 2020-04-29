@@ -15,6 +15,7 @@
 *.suo
 *.txt
 *.opendb
+*.db*
 
 
 src/

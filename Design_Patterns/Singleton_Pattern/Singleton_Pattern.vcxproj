@@ -20,17 +20,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CSingleton.cpp" />
+    <ClCompile Include="HungryManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Manager.cpp" />
     <ClCompile Include="Meyers_Singleton_Pattern.cpp" />
     <ClCompile Include="singleton_thread_unsafe.cpp" />
     <ClCompile Include="testing.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CHungrySingleton.h" />
     <ClInclude Include="CSingleton.h" />
     <ClInclude Include="CSingletonPtr.h" />
+    <ClInclude Include="HungryManager.h" />
+    <ClInclude Include="Manager.h" />
     <ClInclude Include="Meyers_Singleton._Pattern.h" />
+    <ClInclude Include="Meyers_Singleton_Pattern.h" />
     <ClInclude Include="singleton_thread_unsafe.h" />
     <ClInclude Include="testing.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

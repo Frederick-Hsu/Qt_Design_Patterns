@@ -18,6 +18,25 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Factory_Method\CarFactories.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Simple_Factory\Car.cpp" />
+    <ClCompile Include="Simple_Factory\CarBase.cpp" />
+    <ClCompile Include="Simple_Factory\CarFactory.cpp" />
+    <ClCompile Include="test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Factory_Method\CarFactories.h" />
+    <ClInclude Include="Factory_Method\IFactory.h" />
+    <ClInclude Include="Simple_Factory\Car.h" />
+    <ClInclude Include="Simple_Factory\CarBase.h" />
+    <ClInclude Include="Simple_Factory\CarFactory.h" />
+    <ClInclude Include="test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{478ADEE3-702E-4AB2-84B6-D7E55BB1E224}</ProjectGuid>

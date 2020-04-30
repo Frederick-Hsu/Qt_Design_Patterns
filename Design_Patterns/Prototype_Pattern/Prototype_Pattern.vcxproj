@@ -18,44 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Abstract_Template_Factory\Abstract_Factory.cpp" />
-    <ClCompile Include="Abstract_Template_Factory\Car_Categories.cpp" />
-    <ClCompile Include="Abstract_Template_Factory\Extend_Abstract_Factory.cpp" />
-    <ClCompile Include="Abstract_Template_Factory\template_factory.cpp" />
-    <ClCompile Include="Factory_Method\AssemblingCar.cpp" />
-    <ClCompile Include="Factory_Method\AssemblingCarFactory.cpp" />
-    <ClCompile Include="Factory_Method\CarFactories.cpp" />
-    <ClCompile Include="Factory_Method\Components.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Simple_Factory\Car.cpp" />
-    <ClCompile Include="Simple_Factory\CarBase.cpp" />
-    <ClCompile Include="Simple_Factory\CarFactory.cpp" />
-    <ClCompile Include="test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Abstract_Template_Factory\Abstract_Factory.h" />
-    <ClInclude Include="Abstract_Template_Factory\Car_Categories.h" />
-    <ClInclude Include="Abstract_Template_Factory\Extend_Abstract_Factory.h" />
-    <ClInclude Include="Abstract_Template_Factory\template_factory.h" />
-    <ClInclude Include="Factory_Method\AssemblingCar.h" />
-    <ClInclude Include="Factory_Method\AssemblingCarFactory.h" />
-    <ClInclude Include="Factory_Method\CarFactories.h" />
-    <ClInclude Include="Factory_Method\Components.h" />
-    <ClInclude Include="Factory_Method\IFactory.h" />
-    <ClInclude Include="Simple_Factory\Car.h" />
-    <ClInclude Include="Simple_Factory\CarBase.h" />
-    <ClInclude Include="Simple_Factory\CarFactory.h" />
-    <ClInclude Include="test.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Class_Diagram_of_Factory_Pattern.cd" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{478ADEE3-702E-4AB2-84B6-D7E55BB1E224}</ProjectGuid>
+    <ProjectGuid>{83C38A81-F4C9-484F-ACE6-92E9708B4517}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>FactoryPattern</RootNamespace>
+    <RootNamespace>PrototypePattern</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

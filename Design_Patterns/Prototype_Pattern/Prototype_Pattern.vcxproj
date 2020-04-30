@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Resume.cpp" />
+    <ClCompile Include="WorkExperience.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resume.h" />
+    <ClInclude Include="WorkExperience.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{83C38A81-F4C9-484F-ACE6-92E9708B4517}</ProjectGuid>

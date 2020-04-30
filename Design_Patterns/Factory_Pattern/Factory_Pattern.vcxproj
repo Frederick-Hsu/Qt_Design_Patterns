@@ -19,7 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Abstract_Template_Factory\Abstract_Factory.cpp" />
+    <ClCompile Include="Abstract_Template_Factory\Car_Categories.cpp" />
+    <ClCompile Include="Abstract_Template_Factory\Extend_Abstract_Factory.cpp" />
+    <ClCompile Include="Abstract_Template_Factory\template_factory.cpp" />
+    <ClCompile Include="Factory_Method\AssemblingCar.cpp" />
+    <ClCompile Include="Factory_Method\AssemblingCarFactory.cpp" />
     <ClCompile Include="Factory_Method\CarFactories.cpp" />
+    <ClCompile Include="Factory_Method\Components.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Simple_Factory\Car.cpp" />
     <ClCompile Include="Simple_Factory\CarBase.cpp" />
@@ -27,7 +34,14 @@
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Abstract_Template_Factory\Abstract_Factory.h" />
+    <ClInclude Include="Abstract_Template_Factory\Car_Categories.h" />
+    <ClInclude Include="Abstract_Template_Factory\Extend_Abstract_Factory.h" />
+    <ClInclude Include="Abstract_Template_Factory\template_factory.h" />
+    <ClInclude Include="Factory_Method\AssemblingCar.h" />
+    <ClInclude Include="Factory_Method\AssemblingCarFactory.h" />
     <ClInclude Include="Factory_Method\CarFactories.h" />
+    <ClInclude Include="Factory_Method\Components.h" />
     <ClInclude Include="Factory_Method\IFactory.h" />
     <ClInclude Include="Simple_Factory\Car.h" />
     <ClInclude Include="Simple_Factory\CarBase.h" />

@@ -1,9 +1,12 @@
 TEMPLATE = app
-CONFIG += console c++11
+CONFIG += console c++17
 CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        Abstract_Template_Factory/Abstract_Factory.cpp \
+        Abstract_Template_Factory/Car_Categories.cpp \
+        Abstract_Template_Factory/Extend_Abstract_Factory.cpp \
         Abstract_Template_Factory/template_factory.cpp \
         Factory_Method/AssemblingCar.cpp \
         Factory_Method/AssemblingCarFactory.cpp \
@@ -16,6 +19,9 @@ SOURCES += \
         test.cpp
 
 HEADERS += \
+    Abstract_Template_Factory/Abstract_Factory.h \
+    Abstract_Template_Factory/Car_Categories.h \
+    Abstract_Template_Factory/Extend_Abstract_Factory.h \
     Abstract_Template_Factory/template_factory.h \
     Factory_Method/AssemblingCar.h \
     Factory_Method/AssemblingCarFactory.h \

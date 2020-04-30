@@ -10,7 +10,9 @@ FLAGS = -std=c++17
 
 OBJs = main.o test.o Simple_Factory/Car.o Simple_Factory/CarBase.o Simple_Factory/CarFactory.o \
 Factory_Method/CarFactories.o Abstract_Template_Factory/template_factory.o \
-Factory_Method/Components.o Factory_Method/AssemblingCar.o Factory_Method/AssemblingCarFactory.o
+Factory_Method/Components.o Factory_Method/AssemblingCar.o Factory_Method/AssemblingCarFactory.o \
+Abstract_Template_Factory/Car_Categories.o Abstract_Template_Factory/Abstract_Factory.o \
+Abstract_Template_Factory/Extend_Abstract_Factory.o
 
 Factory_Pattern : $(OBJs)
 	g++ $(OPTIONS) $(FLAGS) $(OBJs) -o Factory_Pattern
@@ -44,6 +46,15 @@ AssemblingCar.o : AssemblingCar.cpp AssemblingCar.h Components.h CarBase.h
 
 AssemblingCarFactory.o : AssemblingCarFactory.cpp AssemblingCarFactory.h CarBase.h AssemblingCar.h Components.h
 	g++ $(OPTIONS) $(FLAGS) -c AssemblingCarFactory.cpp
+
+Car_Categories.o : Car_Categories.cpp Car_Categories.h
+	g++ $(OPTIONS) $(FLAGS) -c Car_Categories.cpp
+
+Abstract_Factory.o : Abstract_Factory.cpp Abstract_Factory.h
+	g++ $(OPTIONS) $(FLAGS) -c Abstract_Factory.cpp
+
+Extend_Abstract_Factory.o : Extend_Abstract_Factory.cpp Extend_Abstract_Factory.h
+	g++ $(OPTIONS) $(FLAGS) -c Extend_Abstract_Factory.cpp
 
 .PHONY : clean
 clean :

@@ -5,7 +5,6 @@
     using namespace std;
 
     class WorkExperience;
-    template<class ElemType> class ICloneable;
 
     class WorkExperience
     {
@@ -24,12 +23,6 @@
     private:
         string m_strCompany;
         string m_strWorkTime;
-    };
-
-    template<class ElemType> class ICloneable
-    {
-    public:
-        virtual ElemType* Clone() = 0;
     };
 
 #endif  /* WORK_EXPERIENCE_H */

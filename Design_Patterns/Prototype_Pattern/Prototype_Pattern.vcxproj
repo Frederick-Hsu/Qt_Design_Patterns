@@ -34,6 +34,9 @@
     <ClInclude Include="testing.h" />
     <ClInclude Include="WorkExperience.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{83C38A81-F4C9-484F-ACE6-92E9708B4517}</ProjectGuid>

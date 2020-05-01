@@ -9,7 +9,7 @@
     {
     public:
         Resume();
-        ~Resume();
+        virtual ~Resume();
     public:
         void SetPersonalInfo(const string& name, const string& sex, int age);
         void SetWorkExperience(const string& company, const string& worktime);

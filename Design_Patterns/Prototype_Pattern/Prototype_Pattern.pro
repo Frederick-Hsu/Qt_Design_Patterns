@@ -6,8 +6,12 @@ CONFIG -= qt
 SOURCES += \
         Resume.cpp \
         WorkExperience.cpp \
-        main.cpp
+        main.cpp \
+        shadow_deep_copy.cpp \
+        testing.cpp
 
 HEADERS += \
     Resume.h \
-    WorkExperience.h
+    WorkExperience.h \
+    shadow_deep_copy.h \
+    testing.h

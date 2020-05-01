@@ -21,10 +21,17 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Resume.cpp" />
+    <ClCompile Include="ResumePtr.cpp" />
+    <ClCompile Include="shadow_deep_copy.cpp" />
+    <ClCompile Include="testing.cpp" />
     <ClCompile Include="WorkExperience.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ICloneable.h" />
     <ClInclude Include="Resume.h" />
+    <ClInclude Include="ResumePtr.h" />
+    <ClInclude Include="shadow_deep_copy.h" />
+    <ClInclude Include="testing.h" />
     <ClInclude Include="WorkExperience.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

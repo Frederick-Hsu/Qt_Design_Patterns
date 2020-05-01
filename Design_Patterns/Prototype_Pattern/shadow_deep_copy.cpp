@@ -68,6 +68,13 @@ void Resume2::PrintInfo()
     cout << "\n" << endl;
 }
 
+#if (COPY == DEEP_COPY)
+WorkExperience2* Resume2::GetWorkExperience()
+{
+    return m_WorkExperience;
+}
+#endif
+
 WorkExperience2::WorkExperience2(const string& company, const string& worktime)
 {
     m_strCompany = company;

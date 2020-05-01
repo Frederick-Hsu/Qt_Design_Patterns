@@ -2,6 +2,7 @@
 #define SHADOW_DEEP_COPY_H
 
     #include "WorkExperience.h"
+    #include "ICloneable.h"
 
     #define SHADOW_COPY     1
     #define DEEP_COPY       2
@@ -38,6 +39,9 @@
         void SetWorkExperience(const string& company, const string& worktime);
         Resume2* Clone() override;
         void PrintInfo();
+#if (COPY == DEEP_COPY)
+        WorkExperience2* GetWorkExperience();
+#endif
     };
 
     /* Deep copy */

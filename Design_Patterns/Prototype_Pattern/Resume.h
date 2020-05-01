@@ -2,6 +2,7 @@
 #define RESUME_H
 
     #include "WorkExperience.h"
+    #include "ICloneable.h"
 
     class Resume;
 

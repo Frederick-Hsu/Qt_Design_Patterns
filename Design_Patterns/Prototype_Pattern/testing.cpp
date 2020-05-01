@@ -2,16 +2,24 @@
 
 #include "Resume.h"
 #include "shadow_deep_copy.h"
+#include "ResumePtr.h"
 
 #include <iostream>
+#include <cassert>
 using namespace std;
 
 void execute_test_items(void)
 {
-    TestResume();
-    cout << "\n" << endl;
+//    TestPointer();
+//    cout << "\n" << endl;
 
-    TestResume2();
+//    TestResume();
+//    cout << "\n" << endl;
+
+//    TestResume2();
+//    cout << "\n" << endl;
+
+    TestResumePtr();
     cout << "\n" << endl;
 }
 
@@ -50,6 +58,58 @@ void TestResume2(void)
 
     resume.PrintInfo();
 
+#if (COPY == DEEP_COPY)
+    WorkExperience2* pworke = pclone->GetWorkExperience();
+    if (pworke)
+    {
+        delete pworke;
+        pworke = nullptr;
+    }
+#endif
+
     delete pclone;
     delete pworkexpr;
+}
+
+void TestPointer(void)
+{
+    int *a = new int(100);
+    int *pA = a;
+    int *pB = pA;       /* pA, pB and a, all of them pointed to a */
+
+    delete a;
+    a = NULL;
+
+    assert(pA != NULL); /* although a had been freed, but the pointer pA value does not equal to NULL */
+    pA = NULL;
+
+    assert(pA == NULL);
+    assert(pB != NULL);     /* pointer to a dynamically-allocated object, pointer itself was stored
+                             * in stack, only the dynamically-allocated object was stored in heap.
+                             */
+}
+
+void TestResumePtr(void)
+{
+    ResumePtr rs(new WorkExperience2("HelloBike", "2019/11 --- 2020/03"));
+    rs.SetPersonalInfo("Jacky", "Male", 35);
+    rs.PrintInfo();
+    cout << endl;
+
+    shared_ptr<ResumePtr> pclone(rs.Clone());
+    pclone->SetPersonalInfo("Mary", "Female", 28);
+    pclone->SetWorkExperience("Schindler", "2015/09 --- 2016/06");
+    pclone->PrintInfo();
+    cout << endl;
+
+    shared_ptr<ResumePtr> pclone2(pclone->Clone());
+    pclone2->SetPersonalInfo("Bjorn Cederberg", "Male", 42);
+    pclone2->SetWorkExperience("Shanghai Amphenol Airwave", "2009/10 --- 2018/09");
+    pclone2->PrintInfo();
+    cout << endl;
+
+    pclone->PrintInfo();    /* To check the deep-copy */
+    cout << endl;
+    rs.PrintInfo();         /* Print once again to observe whether deep-copy had succeeded */
+    cout << endl;
 }

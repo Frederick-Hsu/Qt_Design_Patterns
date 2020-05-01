@@ -6,4 +6,7 @@
     void TestResume(void);
     void TestResume2(void);
 
+    void TestPointer(void);
+    void TestResumePtr(void);
+
 #endif  /* TESTING_H */

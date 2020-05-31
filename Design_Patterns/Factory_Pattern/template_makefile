@@ -1,0 +1,274 @@
+# Generic Makefile for C/C++ program
+#
+# Description	:
+# ===============
+# This is an easily customized Makefile template. The purpose is to provide an instant building
+# environment for C/C++ programs.
+#
+# It searches all the C/C++ source files in the specified directories, make dependencies, 
+# compiles and links to form an executable.
+#
+# Besides its default ability to build C/C++ programs, which use only standard C/C++ libraries,
+# you can customize the Makefile to build those using other libraries. Once done, without any
+# changes you can then build programs using the same or less libraries, even if source files
+# are renamed, added or removed. Therefore, it is particularly convenient to use it to build
+# codes for experiemental ot study use.
+#
+# GNU make is expected to use the Makefile. Other versions of makes may or may out work.
+#
+# Usage:
+# ======
+# 1. Copy this Makefile to your program directory.
+# 2. Customize in the "Customizable Section" only if necessary:
+#    * to use non-standard C/C++ libraries, set preprocessor or compiler options and linker
+#      (See Makefile.gtk=-2.0 for an example)
+#    * to search sources in more directories, set to <SRC_DIRS>
+#    * to specify your favorite program name, set to <APP>
+# 3. Try make to start building your program.
+#
+# Make Target:
+# ============
+# The Makefile provides the following targets to make:
+# $ make                  compile and link
+# $ make NODEP=yes        compile and link without generating dependencies
+# $ make objs             comiple only, no linking
+# $ make tags             create tags for Emacs editor
+# $ make ctags            create ctags for vi editor
+# $ make clean            clean objects and the executable files
+# $ make distclean        clean objects, the exectuable and dependencies
+# $ make help             get the usage of the Makefile
+#
+# =============================================================================
+# Customizable Section: adapt those variables to suit your program.
+# =============================================================================
+# The compiling mode, options: Debug, Release
+MODE = Debug
+
+# dependencies must be up to date, options: Yes, No
+CHECK_DEPS = Yes
+
+# The pre-processor options used by the cpp (man cpp for more help information)
+CPPFLAGS = 
+
+# The options used in linking as well as any direct use of ld
+LDFLAGS = 
+
+# The lib list to be linked
+LIBS = 
+
+# The directories in which source files reside. If not specified, only the 
+# current directory will be searched.
+SRC_DIRS = 
+
+# The executable file name.  If not specified, current directory name or 
+# 'a.out' will be used.
+APP = 
+
+# =============================================================================
+# Implicit Section: change the following only when necessary.
+# =============================================================================
+# The source file types
+SRCEXTS = .c .C .cc .cpp .c++ .cp
+
+# The header file types
+HDREXTS = .h .H .hh .hpp .HPP .h++ .hxx .hp
+
+# The pre-processor and compiler options
+# User can override those variables from the command line
+CFLAGS = -O2 -Wall -p
+CXXFLAGS = $(CFLAGS)
+
+# Debug flag options: -g, -g2, -g3
+DEBUG_FLAG = -g
+
+# std flag options: -std=c99, -std=c++11, -std=c++17, -std=iso9899
+STD_FLAG = -std=c++17
+
+# The C program compiler.
+CC = gcc
+
+# The C++ program compiler
+CXX = g++
+
+# Uncomment the following line to compile C++ program
+CC = $(CXX)
+
+# The command used to delete files
+RM = rm -frv
+CTAGS = ctags
+CTAGSFLAGS = 
+
+# =============================================================================
+# Stable Section: usually no need to change, but you can add more:
+# =============================================================================
+SHELL = /bin/sh
+
+EMPTY = 
+SPACE = $(EMPTY) $(EMPTY)
+
+ifeq ($(APP),)
+	CUR_PATH_NAMES = $(subst /,$(SPACE),$(subst $(SPACE),_,$(CURDIR)))
+	APP = $(word $(words $(CUR_PATH_NAMES)), $(CUR_PATH_NAMES))
+	ifeq ($(APP),)
+		APP = a.out
+	endif
+endif
+
+ifeq ($(OS),WINDOWS_NT)
+	APP := $(APP).exe
+endif
+
+ifeq ($(MODE),Debug)
+	CFLAGS += $(DEBUG_FLAG)
+endif
+
+ifeq ($(SRC_DIRS),)
+	SRC_DIRS = .
+endif
+
+ifneq ($(STD_FLAG),)
+	CFLAGS += $(STD_FLAG)
+endif
+
+# =============================================================================
+SOURCES = $(foreach d,$(SRC_DIRS),$(wildcard $(addprefix $(d)/*,$(SRCEXTS))))
+HEADERS = $(foreach d,$(SRC_DIRS),$(wildcard $(addprefix $(d)/*,$(HDREXTS))))
+# SOURCES = $(wildcard $(SRC_DIRS)/*.$(SRCEXTS))
+# HEADERS = $(wildcard $(SRC_DIRS)/*.$(HDREXTS))
+SRC_CXX = $(filter-out %.c,$(SOURCES))
+OBJS = $(addsuffix .o, $(basename $(SOURCES)))
+DEPS = $(OBJS:.o=.d)
+
+# Define some useful variables
+DEP_OPT = $(shell if `$(CC) --version | grep "GCC" >/dev/null`; then \
+echo "-MM -MP"; else echo "-M"; fi)
+
+DEPEND = $(CC) $(DEP_OPT) $(CPPFLAGS) $(CFLAGS)
+
+DEPEND_d = $(subst $(DEBUG_FLAG),,$(DEPEND))
+COMPILE_c = $(CC) $(CPPFLAGS) $(CFLAGS) -c
+COMPILE_cxx = $(CC) $(CPPFLAGS) $(CXXFLAGS) -c
+LINK_c = $(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS)
+LINK_cxx = $(CXX) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS)
+
+PRODUCTS = $(APP) $(OBJS)
+
+.PHONY : all objs ctags clean distclean help show rebuild
+# Delete the default suffixes
+.SUFFIXES :
+all : $(APP)
+
+# Rules for creating dependency files (.d)
+%.d : %.c
+	@echo -n $(dir $<) > $@
+	@$(DEPEND_d) $< >> $@
+%.d : %.C
+	@echo -n $(dir $<) >$@
+	@$(DEPEND_d) $< >>$@
+%.d : %.cc
+	@echo -n $(dir $<) >$@
+	@$(DEPEND_d) $< >>$@
+%.d : %.cpp
+	@echo -n $(dir $<) >$@
+	@$(DEPEND_d) $< >>$@
+%.d : %.CPP
+	@echo -n $(dir $<) >$@
+	@$(DEPEND_d) $< >>$@
+%.d : %.c++
+	@echo -n $(dir $<) >$@
+	@$(DEPEND_d) $< >>$@
+%.d : %.cp
+	@echo -n $(dir $<) >$@
+	@$(DEPEND_d) $< >>$@
+%.d : %.cxx
+	@echo -n $(dir $<) >$@
+	@$(DEPEND_d) $< >>$@
+
+# Rules for generating object files (.o)
+objs : $(OBJS)
+%.o : %.c
+	$(COMPILE_c) $< -o $@
+%.o : %.C
+	$(COMPILE_c) $< -o $@
+%.o : %.cc
+	$(COMPILE_cxx) $< -o $@
+%.o : %.cpp
+	$(COMPILE_cxx) $< -o $@
+%.o : %.CPP
+	$(COMPILE_cxx) $< -o $@
+%.o : %.c++
+	$(COMPILE_cxx) $< -o $@
+%.o : %.cp
+	$(COMPILE_cxx) $< -o $@
+%.o : %.cxx
+	$(COMPILE_cxx) $< -o $@
+
+# Rules for generating tags
+ctags : $(HEADERS) $(SOURCES)
+	$(CTAGS) $(CTAGSFLAGS) $(HEADERS) $(SOURCES)
+
+# Rule for generating the executable
+$(APP) : $(OBJS)
+	ifeq ($(SRC_CXX),)
+	# ifeq ($(strip $(SRCEXTS)), .c)
+		$(LINK_c) $(OBJS) -o $@
+		# echo Type ./$@ to execute the program
+	else
+		$(LINK_cxx) $(OBJS) -o $@
+		# echo Type ./$@ to execute the program
+	endif
+
+# If dependencies have to be up to date, then include the dependencies Makefiles
+ifeq ($(CHECK_DEPS),Yes)
+	ifneq ($(DEPS),)
+		sinclude $(DEPS)
+		PRODUCTS += $(DEPS)
+	endif
+endif
+PRODUCTS += TAGS tags
+
+clean :
+	$(RM) $(OBJS) $(APP)
+
+distclean :
+	$(RM) $(PRODUCTS)
+
+rebuild : clean all
+
+help :
+	@echo
+	@echo "usage:      make [TARGET]"
+	@echo "TAGETS:"
+	@echo "all         (=make) compile and link"
+	@echo "objs        compile only (no linking)"
+	@echo "tags        create tags for Emacs editor"
+	@echo "ctags       create tags for vi editor"
+	@echo "clean       clean objects and the executable file"
+	@echo "distclean   clean objects, the executable and dependencies"
+	@echo "rebuild     clean and make all again"
+	@echo "show        show variables (for debug use only)"
+	@echo "help        print this message"
+	@echo
+
+# Show variables (for debug only)
+show :
+	@echo "OS : " $(OS)
+	@echo "Mode :" $(MODE)
+	@echo "SHELL : " $(SHELL)
+	@echo "CURDIR : " $(CURDIR)
+	@echo "CUR_PATH_NAMES : " $(CUR_PATH_NAMES)
+	@echo "APP : " $(APP)
+	@echo "SRC_DIRS : " $(SRC_DIRS)
+	@echo "SOURCES : " $(SOURCES)
+	@echo "HEADERS : " $(HEADERS)
+	@echo "SRC_CXX : " $(SRC_CXX)
+	@echo "OBJS : " $(OBJS)
+	@echo "DEP_OPT : " $(DEP_OPT)
+	@echo $(DEPEND)
+	@echo $(DEPEND_d)
+	@echo $(COMPILE_c)
+	@echo $(COMPILE_cxx)
+	@echo $(LINK_c)
+	@echo $(LINK_cxx)
+	@echo $(LINK_cxx)
+	@echo "PRODUCTS : " $(PRODUCTS)

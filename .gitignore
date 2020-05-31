@@ -13,6 +13,9 @@
 *.ilk
 *.filters
 *.suo
+*.txt
+*.opendb
+*.db*
 
 
 src/
@@ -39,5 +42,7 @@ stream/mydata
 size/size
 qstd/qstd
 Dialog/
-# libs/
+libs/
 temp/
+GUI/
+Qt_Meta_Object_Mechanism/

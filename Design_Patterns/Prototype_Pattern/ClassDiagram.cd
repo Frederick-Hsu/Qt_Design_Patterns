@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Resume">
+    <Position X="0.5" Y="5.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAgAAAEAAAAAAAAgAAAAAQAAAIAgCQBA=</HashCode>
+      <FileName>Resume.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkExperience">
+    <Position X="9.75" Y="1" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAIAAAQAAAEEAAAAAAgAAAAIAAAAAggAQAAAA=</HashCode>
+      <FileName>WorkExperience.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ICloneable&lt;ElemType&gt;">
+    <Position X="5.75" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>ICloneable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ICloneable2&lt;ElemType&gt;">
+    <Position X="14.75" Y="1" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAgAAAAAAAAACAAAAAAgAAAAAAFA=</HashCode>
+      <FileName>ICloneable.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResumePtr">
+    <Position X="10.25" Y="5.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>gAAABAAAAAAAAgAAAEAAAAAAAAgAAAAAQAAiAEAAQBA=</HashCode>
+      <FileName>ResumePtr.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Resume2">
+    <Position X="15.25" Y="5.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AIACBAAAACAAAgAAAEAAAAAAAAgAAAAAQAAAIAAAQBA=</HashCode>
+      <FileName>shadow_deep_copy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorkExperience2">
+    <Position X="5.5" Y="5.25" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAIAAAQAAAAEAAAAAAgAAAAIAAAAAkgAQAABA=</HashCode>
+      <FileName>shadow_deep_copy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

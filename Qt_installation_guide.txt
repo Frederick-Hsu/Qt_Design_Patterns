@@ -1,0 +1,14 @@
+How to install the latest Qt IDE in Ubuntu 20.04 above?
+
+Step 1: change the execution priviledge 
+
+chmod +x qt-unified-linux-x64-...-online.run
+
+Step 2: install some necessary libraries:
+
+sudo apt-get install libgl1-mesa-dev
+
+Step 3: install the libxcb-xxx libraries:
+
+sudo apt-get install libxcb-randr0-dev libxcb-xtest0-dev libxcb-xinerama0-dev libxcb-shape0-dev libxcb-xkb-dev
+
